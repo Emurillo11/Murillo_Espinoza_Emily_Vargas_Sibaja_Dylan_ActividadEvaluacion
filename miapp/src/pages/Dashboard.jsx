@@ -9,9 +9,17 @@ export default function Dashboard() {
         label.toLowerCase().includes(busqueda.toLowerCase())
     );
 
+    const totalOpciones = menu.length;
+    const opcionesVisibles = menuFiltrado.length;
+
     return (
         <main>
             <h1>Dashboard</h1>
+
+            <section>
+                <p>Total de opciones: {totalOpciones}</p>
+                <p>Opciones visibles: {opcionesVisibles}</p>
+            </section>
 
             <input
                 type="text"
