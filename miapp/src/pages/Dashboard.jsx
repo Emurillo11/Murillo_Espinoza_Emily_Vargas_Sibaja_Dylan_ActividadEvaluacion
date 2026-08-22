@@ -4,6 +4,7 @@ import { menu } from '../menu';
 
 export default function Dashboard() {
     const [busqueda, setBusqueda] = useState('');
+    const [mostrarOpciones, setMostrarOpciones] = useState(true);
 
     const menuFiltrado = menu.filter(({ label }) =>
         label.toLowerCase().includes(busqueda.toLowerCase())
@@ -28,13 +29,19 @@ export default function Dashboard() {
                 onChange={(e) => setBusqueda(e.target.value)}
             />
 
-            <div>
-                {menuFiltrado.map(({ to, label }) => (
-                    <Link key={to} to={to}>
-                        <button>{label}</button>
-                    </Link>
-                ))}
-            </div>
+            <button onClick={() => setMostrarOpciones(!mostrarOpciones)}>
+                {mostrarOpciones ? 'Ocultar opciones' : 'Mostrar opciones'}
+            </button>
+
+            {mostrarOpciones && (
+                <div>
+                    {menuFiltrado.map(({ to, label }) => (
+                        <Link key={to} to={to}>
+                            <button>{label}</button>
+                        </Link>
+                    ))}
+                </div>
+            )}
 
             {menuFiltrado.length === 0 && (
                 <p>No se encontraron opciones.</p>
