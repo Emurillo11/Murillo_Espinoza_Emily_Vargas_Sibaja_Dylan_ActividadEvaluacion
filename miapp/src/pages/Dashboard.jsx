@@ -20,7 +20,9 @@ export default function Dashboard() {
                 value={busqueda}
                 onChange={(e) => setBusqueda(e.target.value)}
             />
-
+<button onClick={() => setBusqueda('')}>
+    Limpiar búsqueda
+</button>
             <div>
                 {menuFiltrado.map(({ to, label }) => (
                     <Link key={to} to={to}>
