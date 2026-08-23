@@ -11,7 +11,7 @@ export default function Dashboard() {
 
     return (
         <main>
-            <h1>Dashboard</h1>
+            <h1>Centro de Control</h1>
 
             <input
                 type="text"
