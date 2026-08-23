@@ -11,7 +11,8 @@ export default function Dashboard() {
 
     return (
         <main>
-            <h1>Dashboard</h1>
+            <h1>Panel Principal</h1>
+            <p>Bienvenido al panel principal de la aplicación.</p>
 
             <input
                 type="text"
