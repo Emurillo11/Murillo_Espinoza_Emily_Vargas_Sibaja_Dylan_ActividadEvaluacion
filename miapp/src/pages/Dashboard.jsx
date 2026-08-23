@@ -23,6 +23,12 @@ export default function Dashboard() {
 <button onClick={() => setBusqueda('')}>
     Limpiar búsqueda
 </button>
+
+{busqueda !== '' && (
+    <p>
+        Resultados encontrados: {menuFiltrado.length}
+    </p>
+)}
             <div>
                 {menuFiltrado.map(({ to, label }) => (
                     <Link key={to} to={to}>
